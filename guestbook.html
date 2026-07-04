@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Guestbook — Numbat Web Old School</title>
+	<meta name="description" content="Sign the Numbat Web guestbook, old-school style." />
+	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<header class="titlebar">
+		<div class="titlebar-brand">
+			<img src="favicon.svg" alt="" />
+			Numbat Web — Old School
+		</div>
+		<nav>
+			<ul class="nav-links">
+				<li><a class="nav-btn" href="index.html">Home</a></li>
+				<li><a class="nav-btn" href="gallery.html">Gallery</a></li>
+				<li><a class="nav-btn" href="services.html">Services</a></li>
+				<li><a class="nav-btn" href="pricing.html">Pricing</a></li>
+				<li><a class="nav-btn" href="contact.html">Contact</a></li>
+				<li><a class="nav-btn" href="guestbook.html">Guestbook</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section">
+			<h2 class="section-heading">Guestbook</h2>
+			<p>Sign in and say hello! Entries are saved right here in your own browser — no
+			server, no database, just like the guestbooks of old. Clear your browser storage
+			and it starts fresh.</p>
+
+			<form class="contact-form" id="guestbook-form">
+				<div class="field">
+					<label for="gb-name">Name</label>
+					<input id="gb-name" name="name" type="text" required maxlength="40" placeholder="Your name" />
+				</div>
+				<div class="field">
+					<label for="gb-message">Message</label>
+					<textarea id="gb-message" name="message" rows="3" required maxlength="280" placeholder="Leave a note..."></textarea>
+				</div>
+				<button type="submit" class="btn-3d primary">Sign Guestbook</button>
+			</form>
+
+			<div class="guestbook-entries" id="guestbook-entries"></div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p><strong>Numbat Web</strong>, a subsidiary of Wild Adventures Pty Ltd</p>
+		<p>ABN 36 678 683 219 · Servicing clients globally</p>
+		<p><a href="mailto:numbat11@gmail.com">numbat11@gmail.com</a></p>
+		<div class="status-bar">
+			<span>Numbat Web — Old School Stack — Document: Done</span>
+			<div class="status-links">
+				<button type="button" class="status-link" data-action="view-source">view source</button>
+				<span class="hit-counter-wrap">Visitors: <span class="hit-counter" id="hit-counter">000000</span></span>
+			</div>
+		</div>
+	</footer>
+
+	<script type="module" src="script.js"></script>
+</body>
+</html>

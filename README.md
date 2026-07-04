@@ -11,16 +11,19 @@ screenshot.
 > `../numbat-web-selector/docs/MULTISTACK-CONTEXT.md` for the full picture.
 
 ## Status
-Home page is built. Gallery, Services, Pricing and Contact are coming-soon stubs for now
-— see `docs/specs/01_home-page-foundation.md` for what's next.
+All 6 pages are built (Home, Gallery, Services, Pricing, Contact, Guestbook), each with
+real interactions instead of dead links — see `docs/specs/00_decision_log.md` for what's
+shipped and why.
 
 ## Quick start
 ```bash
-python3 -m http.server 8080
+python3 scripts/dev-server.py 8080
 # open http://localhost:8080
 ```
 
-No build, no `node_modules`, no env vars.
+No build, no `node_modules`, no env vars. Uses a tiny wrapper around `http.server` that
+sends `Cache-Control: no-store` so CSS/JS edits always show up on a plain refresh — plain
+`python3 -m http.server` caches aggressively and can show stale styles.
 
 ## Documentation
 - [CLAUDE.md](CLAUDE.md) — project overview, design tokens, file inventory
