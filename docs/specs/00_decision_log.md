@@ -8,6 +8,33 @@ Related specs (forward-looking intent) live alongside this file as `NN_<slug>.md
 
 ---
 
+## 2026-07-05 — BATS/Wild Adventures live links, Numbat Web added as 5th gallery card
+
+**Status after this:** Built · **Author:** Numbat + Claude
+
+**What shipped**
+- `script.js` `PROJECTS[1].url` (BATS) → `https://busso-airport-bus.netlify.app`,
+  `PROJECTS[2].url` (Wild Adventures) → `https://wild-adventures.netlify.app`. Same
+  conditional "Visit live site →" link from the 2026-07-03 Popyalar entry, just needed
+  non-empty URLs.
+- New 5th `PROJECTS` entry + matching `gallery.html` card: **Numbat Web** itself, using
+  the previously-unwired `assets/images/gallery/numbatweb-poster.png` (now optimized to
+  `optimized/numbatweb-poster.webp`, 800×762, same `sips`+`cwebp` pipeline as the other
+  four). `url` → `https://numbatweb.com.au` (the selector repo/apex site), not a client
+  project — see `CLAUDE.md` Content model note.
+- Gallery intro copy + meta description updated from "four" to "five" projects.
+
+**Why**
+User supplied the two missing live URLs directly and asked for the studio's own site to
+be added as a showcase piece, gallery-only (no Home-page featured-work counterpart).
+
+**Verified:** confirmed via the Preview tool (after working around a stale-cache false
+negative — see the new "Verifying changes" section in `CLAUDE.md`) that all three modal
+links resolve to the right URLs and the new card renders/opens correctly, both via a
+direct `PROJECTS` array fetch and a live click-through in the injected fresh script.
+
+---
+
 ## 2026-07-03 — Popyalar live-site link in the Gallery modal
 
 **Status after this:** Built · **Author:** Numbat + Claude

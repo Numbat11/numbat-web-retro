@@ -33,7 +33,7 @@ The `numbat-web-selector` apex still shows "COMING SOON" for this slot until it'
 ```
 numbat-web-retro/
 ├── index.html              — Home (hero, NOPRDDBLEMO teaser, featured work, poll)
-├── gallery.html             — 4 featured projects, OS-window modal detail view
+├── gallery.html             — 5 featured projects, OS-window modal detail view
 ├── services.html            — full NOPRDDBLEMO, interactive reader-pane
 ├── pricing.html             — 3 tiers (expand-in-place), services, ongoing ops
 ├── contact.html             — mailto form + business info cards
@@ -51,7 +51,6 @@ numbat-web-retro/
 │       │   └── optimized/main.webp           — shipped (960w, alpha preserved)
 │       └── gallery/
 │           ├── <slug>.png                    — sources (full-res, not shipped)
-│           ├── numbatweb-poster.png          — spare asset, not wired into any page yet
 │           └── optimized/<slug>.webp         — shipped (800w)
 ├── CLAUDE.md                — this file
 ├── README.md
@@ -75,6 +74,7 @@ soon" placeholder instead of a broken-image icon (`.card-media`/`.hero-media` in
 | BATS | `gallery/bats.png` | `gallery/optimized/bats.webp` (800×600) | Home + Gallery |
 | Wild Adventures | `gallery/wildadventures.png` | `gallery/optimized/wildadventures.webp` (600×800) | Home + Gallery |
 | Tree Baby | `gallery/treebaby.png` | `gallery/optimized/treebaby.webp` (800×600) | Home + Gallery |
+| Numbat Web | `gallery/numbatweb-poster.png` | `gallery/optimized/numbatweb-poster.webp` (800×762) | Gallery only |
 
 Regenerate an optimized file after replacing a source:
 ```bash
@@ -119,6 +119,9 @@ independently" rule:
 - Projects: `numbat-web-nature/src/lib/data/projects.js` — only the 4 `favourite: true`
   entries (Popyalar, BATS, Wild Adventures, Tree Baby) are shown; the other 6 were
   deliberately dropped from this stack's Gallery/Home, kept in the source for a future pass.
+- **Numbat Web is a 5th Gallery-only entry, not sourced from Nature's `projects.js`.**
+  It's the studio showcasing itself (`PROJECTS[4]` in `script.js`, url → `numbatweb.com.au`)
+  — added directly in this stack, no Home-page featured-work counterpart.
 - Services (NOPRDDBLEMO): `numbat-web-nature/src/lib/pages/Services.svelte`
 - Pricing: `numbat-web-nature/src/lib/pages/Pricing.svelte`
 - Contact / business details: `numbat-web-nature/src/lib/pages/Contact.svelte`
@@ -159,6 +162,21 @@ No build, no node_modules, no env vars. `scripts/dev-server.py` is a thin wrappe
 header at all, which lets browsers cache CSS/JS aggressively and show stale styles after
 an edit + plain refresh (bit us once on the hero image fix — looked unfixed on a normal
 reload until a hard refresh cleared the cached stylesheet).
+
+## Verifying changes
+**Default to handing verification to the user** — start `scripts/dev-server.py` and let
+them test in their own browser, then patch on their feedback. That loop is faster and has
+no token cost, and a human catches things (layout feel, real click-through) that automated
+checks miss.
+
+**Only reach for the Claude Preview MCP tool (`preview_*`) with explicit user approval**
+for that session — it's handy for automated screenshot/DOM checks when no one's watching,
+but it's slower than a human driving their own browser with live feedback, and this repo's
+dev server has already produced one confirmed false negative from it: the preview
+browser's HTTP cache served a stale `script.js` (missing `Cache-Control` on the
+proxied response) across multiple reloads *and* server restarts, requiring a manual
+`fetch(..., {cache:'no-store'})` workaround to prove the real file was correct. Don't
+trust a Preview-tool failure as ground truth without cache-busting first.
 
 ## Deploy
 Not yet connected to Coolify. Once the site has more than a Home page, create a Coolify

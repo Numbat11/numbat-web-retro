@@ -73,14 +73,14 @@ const PROJECTS = [
 		tech: ['React', 'Express', 'Stripe', 'Google Maps API'],
 		description: 'A complete booking and scheduling system for the Busselton Airport Transit Shuttle service, featuring real-time availability, route mapping, and secure payment processing.',
 		story: 'The BATS team needed a way to manage airport shuttle bookings that was as smooth as the ride itself. We integrated Google Maps for route visualisation, Stripe for seamless payments, and built a driver dashboard that keeps the entire fleet coordinated. The result: fewer missed pickups and happier travellers.',
-		url: '',
+		url: 'https://busso-airport-bus.netlify.app',
 	},
 	{
 		slug: 'wildadventures', title: 'Wild Adventures', tagline: 'Australian eco-tour company showcase',
 		tech: ['Svelte', 'Netlify', 'Contentful CMS'],
 		description: 'An immersive website for Wild Adventures tour company, showcasing eco-tours across Western Australia with rich photography and seamless booking integration.',
 		story: 'Wild Adventures captures the spirit of the Australian bush and coast. We designed the site to feel like you’re already on the adventure -- full-bleed imagery, smooth transitions, and a booking flow that gets out of the way so the landscape does the talking. Built on a headless CMS so the team can update tour listings without touching code.',
-		url: '',
+		url: 'https://wild-adventures.netlify.app',
 	},
 	{
 		slug: 'treebaby', title: 'Tree Baby Design', tagline: 'Creative studio portfolio and shop',
@@ -88,6 +88,13 @@ const PROJECTS = [
 		description: 'A portfolio and e-commerce platform for Tree Baby Design, blending a creative showcase with a fully integrated online shop for original artwork and merchandise.',
 		story: 'Tree Baby Design is where art meets commerce. The brief was to build something that feels like an artist’s studio -- warm, textured, full of personality -- while still being a high-converting online shop. We used GSAP for playful scroll animations and connected everything to Shopify so inventory and orders run themselves.',
 		url: '',
+	},
+	{
+		slug: 'numbatweb', title: 'Numbat Web', tagline: 'Multi-stack studio showcase, this very site included',
+		tech: ['SvelteKit', 'React', 'Vanilla HTML/CSS/JS', 'Coolify'],
+		description: 'The studio\'s own front door: a rock-themed stack selector that lets visitors pick which aesthetic they want to experience the Numbat Web portfolio in.',
+		story: 'Rather than pick one look, we built four -- Nature, Futuristic, Old School (this stack) and the selector that ties them together. Same content, four completely different technical and visual takes, all served from one apex domain.',
+		url: 'https://numbatweb.com.au',
 	},
 ];
 
